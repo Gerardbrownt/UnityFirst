@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - Destruible
+  - Fondo
+  - Bloque
   layers:
   - Default
   - TransparentFX

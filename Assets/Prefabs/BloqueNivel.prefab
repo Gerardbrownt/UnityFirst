@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 3498716808427581321}
   m_Layer: 0
   m_Name: BloqueNivel
-  m_TagString: Untagged
+  m_TagString: Destruible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

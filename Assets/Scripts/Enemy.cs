@@ -2,13 +2,29 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public void TakeDamage()
+    private Animator animator;
+    private bool isDead = false;
+
+    void Start()
     {
-        // Aquí puedes añadir efectos antes de morir
-        Destroy(gameObject);
+        animator = GetComponent<Animator>();
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage()
+    {
+        if (isDead) return;
+
+        isDead = true;
+        animator.SetTrigger("Muere");
+
+        GetComponent<Collider2D>().enabled = false; // ← OPCIONAL
+        GameManager.Instance.AddScore(2);
+
+        Destroy(gameObject, 0.5f);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
         {
